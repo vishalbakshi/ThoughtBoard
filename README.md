@@ -1,2 +1,0 @@
-# ThoughtBoard
-Created with CodeSandbox
