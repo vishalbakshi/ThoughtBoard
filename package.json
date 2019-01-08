@@ -1,12 +1,16 @@
 {
   "name": "thoughtboard",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "description": "A place for users to write down and organize their thoughts",
+  "main": "src/server.js",
   "scripts": {
-    "start": "nodemon src/index.js localhost 8080"
+    "start": "nodemon src/server.js localhost 8080"
   },
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "dotenv": "6.2.0",
+    "express": "4.16.4"
+  },
   "devDependencies": {
     "nodemon": "1.18.4"
   },
