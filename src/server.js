@@ -18,13 +18,11 @@ app
   })
   .post(function(req, res) {
     console.log(req.body);
-
     if (!thoughts[req.body["category"]]) {
       thoughts[req.body["category"]] = [req.body["thought"]];
     } else {
       thoughts[req.body["category"]].push(req.body["thought"]);
     }
-    console.log(thoughts);
     res.redirect("/");
   });
 
