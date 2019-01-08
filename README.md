@@ -7,4 +7,4 @@
 
 # Core Functionality
 
-Allow user to write down and then iteratively categorize and group those thoughts.
+Allow user to write down and then iteratively categorize and group their thoughts.
