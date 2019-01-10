@@ -13,8 +13,9 @@ let thoughts = {};
 app
   .route("/")
   .get(function(req, res) {
+    //let thoughts = {};
     console.log("GET received");
-    res.render("index", { thoughts: thoughts });
+    res.render("index2", { thoughts: thoughts });
   })
   .post(function(req, res) {
     console.log(req.body);
@@ -23,6 +24,7 @@ app
     } else {
       thoughts[req.body["category"]].push(req.body["thought"]);
     }
+    console.log(thoughts);
     res.redirect("/");
   });
 

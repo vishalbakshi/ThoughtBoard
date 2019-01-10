@@ -1,0 +1,30 @@
+html
+  head
+    body
+      form(
+        action = '/'
+        method = 'POST'
+      )
+        label Thought:
+          input(
+            type='text'
+            name='thought'
+          )
+        label Category:
+          select(name = 'category')
+            option Category 1
+            option Category 2
+            option Category 3
+          input(
+            type='submit'
+            value='Submit'
+          )
+      each val, index in thoughts
+        ul 
+          li
+            div(contenteditable = "true" value=index)=index
+            ul
+              each thought in val
+                li
+                  div(contenteditable="true" value=thought)=thought
+                    
