@@ -11,3 +11,8 @@ I think I focused on the first part of the core functionality (write down) inste
 
 Yes, the concept of a thoughtboard only works if you have thoughts on the board, but
 the process of grouping and categorizing those thoughts is the core goal of the process.
+
+## Week Two
+
+I believe the best route forward is to recreate the core of this project. Instead of focusing first on a form,
+I will branch off and focus on grouping/categorizing.
