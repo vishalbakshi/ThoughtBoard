@@ -20,3 +20,5 @@ I will branch off and focus on grouping/categorizing.
 | Categories                    | Thought Text      |
 | ----------------------------- | ----------------- |
 | Category1,Category2,Category3 | This is a thought |
+
+<input type="text" id="name" name="name"/>
