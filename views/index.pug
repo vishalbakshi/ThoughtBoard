@@ -88,8 +88,24 @@ html
                 type="submit"
                 value="Submit"
               )
-            
+    form(
+      action="/"
+      method="POST"
+    )
+    each val, index in formData 
+      
+      each el, idx in val
+        .thought
+          label(
+            for=idx
+          )=el
+            select(
+              name=idx
+            )
+              option(
+                name=index
+              )=index
     each val, index in formData
       p=index
-      each el in val 
-        p=el
+      each idx, el in val 
+        p=el + ' ' + idx

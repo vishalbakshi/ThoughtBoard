@@ -22,15 +22,15 @@ app
     res.render("index", { formData: formData });
   })
   .post(function(req, res) {
+    let formData = {};
     Object.keys(req.body).forEach(function(key) {
+      console.log(req.body[key]);
       if (formData[req.body[key]] === undefined) {
         let newObj = {};
         newObj[key] = thoughts[key];
-        formData[req.body[key]][key] = thoughts[key];
+        formData[req.body[key]] = newObj;
       } else {
-        if (formData[req.body[key]][key] === undefined) {
-          formData[req.body[key]][key] = thoughts[key];
-        }
+        formData[req.body[key]][key] = thoughts[key];
       }
     });
     console.log(formData);
