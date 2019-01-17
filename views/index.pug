@@ -1,0 +1,95 @@
+html
+  body 
+    form(
+      action="/"
+      method="POST"
+    )
+      .thought 
+        label(
+          for="thought1_id"
+        ) Thought 1
+          select(
+            name="thought1_id"
+          )
+            option(
+              name="no-category"
+              value="no-category"
+            )
+            option(
+              name="category1"
+            ) Category 1
+            option(
+              name = "category1"
+            ) Category 2
+            option(
+              name = "category1"
+            ) Category 3
+      .thought
+        label(
+          for= "thought2_id"
+        ) Thought 2
+          select(
+            name = "thought2_id"
+          )
+            option(
+              name = "no-category"
+              value = "no-category"
+            )
+            option(
+              name = "category1"
+            ) Category 1
+            option(
+              name = "category1"
+            ) Category 2
+            option(
+              name = "category1"
+            ) Category 3
+        .thought
+          label(
+          for= "thought3_id"
+        ) Thought 3
+            select(
+              name = "thought3_id"
+            )
+              option(
+                name = "no-category"
+                value = "no-category"
+              )
+              option(
+                name = "category1"
+              ) Category 1
+              option(
+                name = "category1"
+              ) Category 2
+              option(
+                name = "category1"
+              ) Category 3
+          .thought
+            label(
+            for= "thought4_id"
+          ) Thought 4
+              select(
+                name = "thought4_id"
+              )
+                option(
+                  name = "no-category"
+                  value = "no-category"
+                )
+                option(
+                  name = "category1"
+                ) Category 1
+                option(
+                  name = "category1"
+                ) Category 2
+                option(
+                  name = "category1"
+                ) Category 3
+              input(
+                type="submit"
+                value="Submit"
+              )
+            
+    each val, index in formData
+      p=index
+      each el in val 
+        p=el
