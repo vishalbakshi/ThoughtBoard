@@ -14,12 +14,19 @@ let thoughts = {
   thought4_id: "Thought 4"
 };
 
+var categories = {
+  category1: "Category 1",
+  category2: "Category 2",
+  category3: "Category 3"
+};
+
 let formData = {};
 app
   .route("/")
   .get(function(req, res) {
+    console.log(categories);
     //res.sendFile("/sandbox/views/index.html");
-    res.render("index", { formData: formData });
+    res.render("index", { formData: formData, categories: categories });
   })
   .post(function(req, res) {
     let formData = {};
@@ -35,7 +42,7 @@ app
     });
     console.log(formData);
     //res.redirect("/");
-    res.render("index", { formData: formData });
+    res.render("index", { formData: formData, categories: categories });
   });
 
 app.listen(8080, function() {

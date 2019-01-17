@@ -1,5 +1,5 @@
 html
-  body 
+  body
     form(
       action="/"
       method="POST"
@@ -89,7 +89,7 @@ html
                 value="Submit"
               )
     form(
-      action="/"
+      action="/blah"
       method="POST"
     )
     each val, index in formData 
@@ -102,10 +102,11 @@ html
             select(
               name=idx
             )
-              option(
-                name=index
-              )=index
+            option(
+              name=category
+            )=category
     each val, index in formData
       p=index
       each idx, el in val 
         p=el + ' ' + idx
+    
