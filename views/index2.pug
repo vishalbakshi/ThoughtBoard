@@ -1,0 +1,23 @@
+html 
+  body 
+    form(
+      action="/"
+      method="POST"
+    )
+      each thoughts, category in formData 
+        each thought, thoughtID in thoughts 
+          .thought
+            label(for=thoughtID)=thought
+              select(name=thoughtID)
+                each cat, catID in categories
+                  if cat==category
+                    option(
+                      name=cat
+                      selected
+                      )=cat
+                  else 
+                    option(name=cat)=cat
+      input(
+        type="submit"
+        value="Submit"
+      )

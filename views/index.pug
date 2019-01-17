@@ -12,9 +12,8 @@ html
             name="thought1_id"
           )
             option(
-              name="no-category"
-              value="no-category"
-            )
+              name="no_category"
+            ) No Category
             option(
               name="category1"
             ) Category 1
@@ -32,9 +31,9 @@ html
             name = "thought2_id"
           )
             option(
-              name = "no-category"
-              value = "no-category"
-            )
+              name = "no_category"
+              value = "no_category"
+            ) No Category
             option(
               name = "category1"
             ) Category 1
@@ -52,9 +51,9 @@ html
               name = "thought3_id"
             )
               option(
-                name = "no-category"
-                value = "no-category"
-              )
+                name = "no_category"
+                value = "no_category"
+              ) No Category
               option(
                 name = "category1"
               ) Category 1
@@ -72,9 +71,9 @@ html
                 name = "thought4_id"
               )
                 option(
-                  name = "no-category"
-                  value = "no-category"
-                )
+                  name = "no_category"
+                  value = "no_category"
+                ) No Category
                 option(
                   name = "category1"
                 ) Category 1
@@ -87,26 +86,4 @@ html
               input(
                 type="submit"
                 value="Submit"
-              )
-    form(
-      action="/blah"
-      method="POST"
-    )
-    each val, index in formData 
-      
-      each el, idx in val
-        .thought
-          label(
-            for=idx
-          )=el
-            select(
-              name=idx
-            )
-            option(
-              name=category
-            )=category
-    each val, index in formData
-      p=index
-      each idx, el in val 
-        p=el + ' ' + idx
-    
+                )
