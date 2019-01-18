@@ -8,29 +8,22 @@ app.use("/", express.static("views/index.html"));
 
 app.set("view engine", "pug");
 
-let thoughts = {
-  thought1_id: "Thought 1",
-  thought2_id: "Thought 2",
-  thought3_id: "Thought 3",
-  thought4_id: "Thought 4"
-};
-
-var categories = {
-  no_category: "No Category",
-  category1: "Category 1",
-  category2: "Category 2",
-  category3: "Category 3"
-};
-
+// Placeholders for a database
+// thoughts holds thoughtID: thought text pairs
+// categories holds categoryID: category text pairs
+// Both need starting points and counters for ID
+let thoughts = {};
+var categories = {};
 let thoughtID = 0;
-let formData = {};
+let categoryID = 0;
+
 app
   .route("/")
   .get(function(req, res) {
-    res.render("index", { formData: formData, categories: categories });
+    res.render("index3", { thoughts: thoughts, categories: categories });
   })
   .post(function(req, res) {
-    formData = {};
+    /*
     Object.keys(req.body).forEach(function(key) {
       if (formData[req.body[key]] === undefined) {
         let newObj = {};
@@ -40,16 +33,48 @@ app
         formData[req.body[key]][key] = thoughts[key];
       }
     });
-    console.log(formData);
-    res.render("index2", { formData: formData, categories: categories });
+    */
+    res.render("index3", { thoughts: thoughts, categories: categories });
   });
 
 app.route("/newthought").post(function(req, res) {
-  thoughts[thoughtID] = req.body.thought;
-  //formData["no-category"][thoughtID] = req.body.thought;
-  console.log(thoughts);
-  console.log(formData);
+  thoughts["thought" + thoughtID] = [req.body.thought];
   thoughtID++;
+  res.render("index3", { thoughts: thoughts, categories: categories });
+});
+
+app.route("/newcategory").post(function(req, res) {
+  categories["category" + categoryID] = req.body.category;
+  categoryID++;
+  res.render("index3", { thoughts: thoughts, categories: categories });
+});
+
+app.route("/sort").post(function(req, res) {
+  console.log(req.body["new-category"]);
+  for (let key in req.body) {
+    // If a key of the request is a thoughtID
+    // then either push the category on if none currenty exists
+    // or replace the current category with the new one
+    if (thoughts[key] !== undefined) {
+      if (thoughts[key][1] !== undefined) {
+        thoughts[key][1] = categories[req.body["new_category"]];
+      } else {
+        thoughts[key].push(categories[req.body["new_category"]]);
+      }
+    }
+  }
+  console.log(thoughts);
+  res.render("index3", { thoughts: thoughts, categories: categories });
+});
+
+app.route("/deletethoughts").post(function(req, res) {
+  thoughts = {};
+  res.render("index3", { thoughts: thoughts, categories: categories });
+});
+
+app.route("/deletecategories").post(function(req, res) {
+  categories = {};
+  res.render("index3", { thoughts: thoughts, categories: categories });
 });
 
 app.listen(8080, function() {
