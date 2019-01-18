@@ -1,6 +1,16 @@
 html
   body
     form(
+      action="/newthought"
+      method="POST"
+    )
+      input(name="thought" placeholder="Type a thought here")
+      input(
+        type="submit"
+        value="Submit"
+        )
+    
+    form(
       action="/"
       method="POST"
     )

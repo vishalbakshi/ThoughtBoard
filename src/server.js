@@ -22,15 +22,15 @@ var categories = {
   category3: "Category 3"
 };
 
+let thoughtID = 0;
 let formData = {};
 app
   .route("/")
   .get(function(req, res) {
-    //res.sendFile("/sandbox/views/index.html");
     res.render("index", { formData: formData, categories: categories });
   })
   .post(function(req, res) {
-    let formData = {};
+    formData = {};
     Object.keys(req.body).forEach(function(key) {
       if (formData[req.body[key]] === undefined) {
         let newObj = {};
@@ -41,9 +41,16 @@ app
       }
     });
     console.log(formData);
-    //res.redirect("/");
     res.render("index2", { formData: formData, categories: categories });
   });
+
+app.route("/newthought").post(function(req, res) {
+  thoughts[thoughtID] = req.body.thought;
+  //formData["no-category"][thoughtID] = req.body.thought;
+  console.log(thoughts);
+  console.log(formData);
+  thoughtID++;
+});
 
 app.listen(8080, function() {
   console.log("Listening on 8080");
