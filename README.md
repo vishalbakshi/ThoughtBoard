@@ -1,6 +1,6 @@
 # Four Week Version
 1. What is the next most annoying task to do manually?
-    - Keeping track of old categories after assigning subcategories
+    - Keeping track of old categories after assigning new categories
 2. What is the next most annoying task to do manually?
     - Process/analyze thought groups from a linear list
 ## Core Functionality
