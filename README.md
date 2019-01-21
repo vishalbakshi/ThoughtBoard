@@ -6,6 +6,8 @@
 ## Core Functionality
 User can add thoughts to the screen, assign categories to them, and view them in groups by category
 
+<hr>
+
 # Two Week Version
 
 1. What is the task that is impossible to do manually?
@@ -18,13 +20,13 @@ User can add thoughts to the screen, assign categories to them, and view them in
 Allow user to write down and then iteratively categorize and group their thoughts.
 
 ### User can add thoughts
-<img src="20190117B.gif">
+<img src="20190117B.gif" width="50%">
 
 ### User can add categories
-<img src="20190117C.gif">
+<img src="20190117C.gif" width="50%">
 
 ### User can categorize thoughts
-<img src="20190117D.gif">
+<img src="20190117D.gif" width="50%">
 
 ### User can re-categorize thoughts
-<img src="20190117E.gif">
+<img src="20190117E.gif" width="50%">
