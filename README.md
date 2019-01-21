@@ -16,3 +16,15 @@ User can add thoughts to the screen, assign categories to them, and view them in
 ## Core Functionality
 
 Allow user to write down and then iteratively categorize and group their thoughts.
+
+### User can add thoughts
+<img src="20190117B.gif">
+
+### User can add categories
+<img src="20190117C.gif">
+
+### User can categorize thoughts
+<img src="20190117D.gif">
+
+### User can re-categorize thoughts
+<img src="20190117E.gif">
