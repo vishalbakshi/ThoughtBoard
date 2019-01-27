@@ -1,0 +1,84 @@
+html
+  body
+    form(
+      action="/newthought"
+      method="POST"
+    )
+      input(
+        name="thought"
+        placeholder="Type a thought here"
+        autofocus
+      )
+      input(
+        type="submit"
+        value="Submit"
+      )
+    form(
+      action="/newcategory"
+      method="POST"
+    )
+      input(
+        name="category"
+        placeholder="Type a category here"
+      )
+      input(
+        type="submit"
+        value="Submit"
+      )
+    form(
+      action="/sort"
+      method="POST"
+    )
+      select(
+        name="new_category"
+      )
+        each category, categoryID in categories
+          option(
+            name="categoryID"
+            value=categoryID
+            )=category
+      each category, categoryID in categories
+        each thought, thoughtID in thoughts
+          if thought[1]==category
+            .thought
+              label(for=thoughtID)=thought[0]
+                input(
+                  type="checkbox"
+                  name=thoughtID
+                )
+              span(
+                class='category'
+                )=thought[1]
+
+      each thought, thoughtID in thoughts
+        if !thought[1]
+          .thought
+            label(for= thoughtID)=thought[0]
+              input(
+                  type = "checkbox"
+                  name = thoughtID
+              )
+      input(
+        type="submit"
+        value="Submit"
+      )
+    form(
+      action="/deletethoughts"
+      method="POST"
+    )
+      input(
+        type="submit"
+        value="Delete Thoughts"
+      )
+    form(
+      action="/deletecategories"
+      method="POST"
+    )
+      input(
+        type="submit"
+        value="Delete Categories"
+      )
+
+
+    
+        

@@ -14,5 +14,17 @@ the process of grouping and categorizing those thoughts is the core goal of the 
 
 ## Week Two
 
-I believe the best route forward is to recreate the core of this project. Instead of focusing first on a form,
-I will branch off and focus on grouping/categorizing.
+I believe the best route forward is to recreate the core of this project.
+Instead of focusing first on a form, I will branch off and focus on
+grouping/categorizing.
+
+| Categories                      | Thought Text            |
+| ------------------------------- | ----------------------- |
+| Category1,Category2,Category3   | This is a thought       |
+| -----------------------------   | -----------------       |
+| Category2, Category3, Category4 | This is another thought |
+| ------------------------------- | ----------------------- |
+
+- Subcategories might be handled by sorting
+- Blank categories for thoughts that are not categorized yet
+- Sorting > when and how will it happen?

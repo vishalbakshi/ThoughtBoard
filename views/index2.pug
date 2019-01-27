@@ -1,30 +1,32 @@
-html
-  head
-    body
-      form(
-        action = '/'
-        method = 'POST'
+html 
+  body 
+    form(
+      action = "/newthought"
+      method = "POST"
+    )
+    input(name = "thought" placeholder = "Type a thought here")
+    input(
+      type = "submit"
+      value = "Submit"
+    )
+    form(
+      action="/"
+      method="POST"
+    )
+      each thoughts, category in formData 
+        each thought, thoughtID in thoughts 
+          .thought
+            label(for=thoughtID)=thought[0]
+              select(name=thoughtID)
+                each cat, catID in categories
+                  if cat==category
+                    option(
+                      name=cat
+                      selected
+                      )=cat
+                  else 
+                    option(name=cat)=cat
+      input(
+        type="submit"
+        value="Submit"
       )
-        label Thought:
-          input(
-            type='text'
-            name='thought'
-          )
-        label Category:
-          select(name = 'category')
-            option Category 1
-            option Category 2
-            option Category 3
-          input(
-            type='submit'
-            value='Submit'
-          )
-      each val, index in thoughts
-        ul 
-          li
-            div(contenteditable = "true" value=index)=index
-            ul
-              each thought in val
-                li
-                  div(contenteditable="true" value=thought)=thought
-                    

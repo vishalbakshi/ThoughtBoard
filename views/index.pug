@@ -1,27 +1,99 @@
-html 
-  head 
-    body 
-      form(
-        action='/'
-        method='POST'
-      )
-        label Thought:
-          input(
-            type='text'
-            name='thought'
-          ) 
-        label Category:
-          select(name='category') 
-            option Category 1 
-            option Category 2 
-            option Category 3
-          input(
-            type='submit'
-            value='Submit'
+html
+  body
+    form(
+      action="/newthought"
+      method="POST"
+    )
+      input(name="thought" placeholder="Type a thought here")
+      input(
+        type="submit"
+        value="Submit"
+        )
+    
+    form(
+      action="/"
+      method="POST"
+    )
+      .thought 
+        label(
+          for="thought1_id"
+        ) Thought 1
+          select(
+            name="thought1_id"
           )
-      each val, index in thoughts
-        ul
-          li=index
-          each thought in val
-            ul
-              li=thought
+            option(
+              name="no_category"
+            ) No Category
+            option(
+              name="category1"
+            ) Category 1
+            option(
+              name = "category1"
+            ) Category 2
+            option(
+              name = "category1"
+            ) Category 3
+      .thought
+        label(
+          for= "thought2_id"
+        ) Thought 2
+          select(
+            name = "thought2_id"
+          )
+            option(
+              name = "no_category"
+              value = "no_category"
+            ) No Category
+            option(
+              name = "category1"
+            ) Category 1
+            option(
+              name = "category1"
+            ) Category 2
+            option(
+              name = "category1"
+            ) Category 3
+        .thought
+          label(
+          for= "thought3_id"
+        ) Thought 3
+            select(
+              name = "thought3_id"
+            )
+              option(
+                name = "no_category"
+                value = "no_category"
+              ) No Category
+              option(
+                name = "category1"
+              ) Category 1
+              option(
+                name = "category1"
+              ) Category 2
+              option(
+                name = "category1"
+              ) Category 3
+          .thought
+            label(
+            for= "thought4_id"
+          ) Thought 4
+              select(
+                name = "thought4_id"
+              )
+                option(
+                  name = "no_category"
+                  value = "no_category"
+                ) No Category
+                option(
+                  name = "category1"
+                ) Category 1
+                option(
+                  name = "category1"
+                ) Category 2
+                option(
+                  name = "category1"
+                ) Category 3
+              input(
+                type="submit"
+                value="Submit"
+                )
