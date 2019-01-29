@@ -6,8 +6,9 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/", express.static("views/index.html"));
 app.use(express.static("public"));
+app.use(express.static("views"));
 app.set("view engine", "pug");
-
+let mode = "test";
 // Placeholders for a database
 // thoughts holds thoughtID: thought text pairs
 // tags holds tagID: tag text pairs
@@ -45,7 +46,6 @@ app
 app.route("/newthought").post(function(req, res) {
   thoughts["thought" + thoughtID] = [req.body.thought];
   thoughtID++;
-  console.log(thoughts);
   res.render("index", { thoughts: thoughts, tags: tags });
 });
 
@@ -56,7 +56,6 @@ app.route("/newtag").post(function(req, res) {
 });
 
 app.route("/sort").post(function(req, res) {
-  console.log(req.body["new-tag"]);
   for (let key in req.body) {
     // If a key of the request is a thoughtID
     // then either push the tag on if none currenty exists
@@ -69,12 +68,10 @@ app.route("/sort").post(function(req, res) {
       }
     }
   }
-  console.log(thoughts);
   res.render("index", { thoughts: thoughts, tags: tags });
 });
 
 app.route("/addtag").post(function(req, res) {
-  console.log(req.body["new-tag"]);
   // If a key of the request is a thoughtID
   // then push the tag into thoughts array
   for (let key in req.body) {
@@ -101,6 +98,9 @@ app.route("/deletetags").post(function(req, res) {
   res.render("index", { thoughts: thoughts, tags: tags });
 });
 
+app.route("/test").get(function(req, res) {
+  res.render("test", { thoughts: thoughts, tags: tags });
+});
 app.listen(8080, function() {
   console.log("Listening on 8080");
 });
