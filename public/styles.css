@@ -5,6 +5,12 @@
   margin-bottom: 15px;
 }
 
+.thought.selected {
+  width: 25%;
+  height: 25%;
+  background-color: red;
+  margin-bottom: 15px;
+}
 .thoughtCheckbox {
   position: absolute;
   left: 20%;
@@ -16,16 +22,4 @@ label {
 
 span {
   color: grey;
-}
-
-.tag1.selected {
-  color: red;
-}
-
-.tag2.selected {
-  color: red;
-}
-
-.tag0.selected {
-  color: red;
 }
