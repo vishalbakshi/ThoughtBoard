@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.use(express.static("views"));
 app.set("view engine", "pug");
-let mode = "test";
+
 // Placeholders for a database
 // thoughts holds thoughtID: thought text pairs
 // tags holds tagID: tag text pairs
