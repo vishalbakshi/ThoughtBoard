@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/", express.static("views/index.html"));
+//app.use("/", express.static("views/index.html"));
 app.use(express.static("public"));
 app.use(express.static("views"));
 app.set("view engine", "pug");
