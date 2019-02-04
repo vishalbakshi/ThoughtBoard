@@ -1,0 +1,25 @@
+.thought {
+  width: 25%;
+  height: 25%;
+  background-color: #ffc;
+  margin-bottom: 15px;
+}
+
+.thought.selected {
+  width: 25%;
+  height: 25%;
+  background-color: red;
+  margin-bottom: 15px;
+}
+.thoughtCheckbox {
+  position: absolute;
+  left: 20%;
+}
+
+label {
+  width: 100%;
+}
+
+span {
+  color: grey;
+}

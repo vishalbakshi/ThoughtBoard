@@ -1,99 +1,99 @@
 html
+  head 
+    link(
+      rel="stylesheet"
+      href="styles.css"
+    )
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
   body
+    p(class="testText")
     form(
       action="/newthought"
       method="POST"
     )
-      input(name="thought" placeholder="Type a thought here")
       input(
+        name="thought"
+        placeholder="Type a thought here"
+        autofocus
+      )
+      input(
+        name="submitThought"
         type="submit"
-        value="Submit"
-        )
-    
+        value="Add thought"
+      )
     form(
-      action="/"
+      action="/newtag"
       method="POST"
     )
-      .thought 
-        label(
-          for="thought1_id"
-        ) Thought 1
-          select(
-            name="thought1_id"
+      input(
+        name="tag"
+        placeholder="Type a tag here"
+      )
+      input(
+        name="submitTag"
+        type="submit"
+        value="Add tag"
+      )
+    form(
+      id="addTagForm"
+      action="/addtag"
+      method="POST"
+    )
+      select(
+        id="selectTag"
+        name="new_tag"
+      )
+        each tag, tagID in tags
+          option(
+            name="tagID"
+            value=tagID
+            )=tag
+        input(
+          type="submit"
+          value="Tag it"
+        )
+        input(
+          id="highlightByTag"
+          name="highlight"
+          type="submit"
+          value="Highlight Thoughts"
+        ) 
+      each thought, thoughtID in thoughts
+        .thought 
+          label(for=thoughtID)=thought[0]
+          input(
+            class="thoughtCheckbox"
+            type="checkbox"
+            name=thoughtID
           )
-            option(
-              name="no_category"
-            ) No Category
-            option(
-              name="category1"
-            ) Category 1
-            option(
-              name = "category1"
-            ) Category 2
-            option(
-              name = "category1"
-            ) Category 3
-      .thought
-        label(
-          for= "thought2_id"
-        ) Thought 2
-          select(
-            name = "thought2_id"
-          )
-            option(
-              name = "no_category"
-              value = "no_category"
-            ) No Category
-            option(
-              name = "category1"
-            ) Category 1
-            option(
-              name = "category1"
-            ) Category 2
-            option(
-              name = "category1"
-            ) Category 3
-        .thought
-          label(
-          for= "thought3_id"
-        ) Thought 3
-            select(
-              name = "thought3_id"
-            )
-              option(
-                name = "no_category"
-                value = "no_category"
-              ) No Category
-              option(
-                name = "category1"
-              ) Category 1
-              option(
-                name = "category1"
-              ) Category 2
-              option(
-                name = "category1"
-              ) Category 3
-          .thought
-            label(
-            for= "thought4_id"
-          ) Thought 4
-              select(
-                name = "thought4_id"
-              )
-                option(
-                  name = "no_category"
-                  value = "no_category"
-                ) No Category
-                option(
-                  name = "category1"
-                ) Category 1
-                option(
-                  name = "category1"
-                ) Category 2
-                option(
-                  name = "category1"
-                ) Category 3
-              input(
-                type="submit"
-                value="Submit"
-                )
+          br
+          each val, tagID in tags
+            if (thought[1])
+              each tag in thought[1]
+                if (tag == val)
+                  span(
+                    class="tag"
+                    name=tagID
+                  )=tag
+                  br
+    form(
+      action="/deletethoughts"
+      method="POST"
+    )
+      input(
+        type="submit"
+        value="Delete Thoughts"
+      )
+    form(
+      action="/deletetags"
+      method="POST"
+    )
+      input(
+        type="submit"
+        value="Delete tags"
+      )
+    script(src="highlightThoughts.js")
+
+
+    
+        
