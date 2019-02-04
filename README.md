@@ -1,3 +1,11 @@
+# Six Week Version
+1. What is impossible to do manually?
+   - Access the web app--time to deploy!
+2. What is the next most annoying task to do manually?
+   - Save thought boards
+3. What is the next most annoying task to do manually?
+   - Stay patient with the barebones UI and UX
+
 # Four Week Version
 1. What is the next most annoying task to do manually?
     - Keeping track of old categories after assigning new categories (i.e. user should be able to add "subcategories")
