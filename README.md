@@ -6,6 +6,7 @@
 ## Core Functionality
 User can add thoughts to the screen, assign categories to them, and view them in groups by category
 
+<img src="20190202B.gif" width="50%">
 <hr>
 
 # Two Week Version
